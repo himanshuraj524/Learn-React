@@ -2,19 +2,16 @@
 import './ExpenseItem.css';
 
 // This is our first custom component.
-function ExpenseItem() {
-    // here we will pass the values from a variable into the below jsx code.
-    const name = 'Cell Phone';
-    const date = new Date(2021, 4, 27);
-    const price = '1800';
-    // for passig the variable values into the jsx we use {} inside this we can pass the variable values.
+// now we will access the variables that are coming from the App.js into our component in React the data comes in the form of props but we can use any name we want and this props comes in the form of function arguments.
+function ExpenseItem(props) {
     return(
         // In react function based components we cannot have multiple root elements, so for that we will create one element and inside that element we store all the other element. 
+        // now we will access the props values into the below jsx.
         <div className="expense-item">
-            <div>{date.toISOString()}</div>
+            <div>{props.date.toISOString()}</div>
             <div className="expense-item__description">
-                <h2>{name}</h2>
-                <div className="expense-item__price">${price}</div>
+                <h2>{props.name}</h2>
+                <div className="expense-item__price">${props.price}</div>
             </div>
         </div>
     )
