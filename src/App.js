@@ -8,22 +8,22 @@ function App() {
     {
     name:'Iphone12Mini',
     price:'699',
-    date:new Date(2021, 4, 27)
+    date:new Date(2021, 4, 20)
     },
     {
     name:'Iphone12',
     price:'799',
-    date:new Date(2021, 4, 27)
+    date:new Date(2021, 4, 22)
     },
     {
     name:'Iphone12Pro',
     price:'999',
-    date:new Date(2021, 4, 27)
+    date:new Date(2021, 4, 24)
     },
     {
     name:'Iphone12ProMax',
     price:'1599',
-    date:new Date(2021, 4, 27)
+    date:new Date(2021, 4, 26)
     }
 
   ]
