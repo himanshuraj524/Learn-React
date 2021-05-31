@@ -1,6 +1,6 @@
 // This is the file which get executed whenever the react project gets loaded into the browser, and in this file we will import all the other components.
 // below we are importing the component which we are going to use to show the expenses.
-import Expenses from './components/Expenses';
+import Expenses from './components/Expenses/Expenses';
 function App() {
   // now we will use props(properties) to send the data into our components.
   // object for sending the values.

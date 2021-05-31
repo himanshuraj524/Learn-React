@@ -1,9 +1,9 @@
 // Import ExpenseItem Component.
-import ExpenseItem from './ExpenseItem';
+import ExpenseItem from '../Expenses/ExpenseItem';
 // import the Expenses.css
-import './Expenses.css'
+import '../Expenses/Expenses.css'
 // import Card component
-import Card from './Card'
+import Card from '../UI/Card'
 function Expenses(props){
     // This component will show the expenses into the page.
     return(

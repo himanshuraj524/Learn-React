@@ -1,9 +1,9 @@
 // below we have imported the css file for stylig the component.
-import './ExpenseItem.css';
+import '../Expenses/ExpenseItem.css';
 // here we will import the ExpenseDate item.
-import ExpenseDate from './ExpenseDate';
+import ExpenseDate from '../Expenses/ExpenseDate';
 // import the card component here
-import Card from "./Card";
+import Card from "../UI/Card";
 // This is our first custom component.
 // now we will access the variables that are coming from the App.js into our component in React the data comes in the form of props but we can use any name we want and this props comes in the form of function arguments.
 function ExpenseItem(props) { 
