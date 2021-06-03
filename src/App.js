@@ -1,6 +1,8 @@
 // This is the file which get executed whenever the react project gets loaded into the browser, and in this file we will import all the other components.
 // below we are importing the component which we are going to use to show the expenses.
 import Expenses from './components/Expenses/Expenses';
+// Importing the NewExpense component.
+import NewExpense from './components/NewExpense/NewExpense';
 function App() {
   // now we will use props(properties) to send the data into our components.
   // object for sending the values.
@@ -29,7 +31,8 @@ function App() {
   ]
   return (
     <div>
-      <h2>Hey boy you can do it.</h2>
+      {/* This is used to add new expenses into the app */}
+      <NewExpense />
       {/* below we are sending the expenses object to the Expenses component */}
       <Expenses item={expenses}/>
     </div>
