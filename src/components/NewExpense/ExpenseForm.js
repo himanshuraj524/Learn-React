@@ -8,20 +8,41 @@ const ExpenseForm = () => {
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
+
+    // Alternative approach of useState, here we will create the object where we will add all the elements to update their states.
+//    const [userInput, setUserInput] = useState({
+//        enteredTitle: '',
+//        enteredAmount: '',
+//        enteredDate: '',
+//    });
     
     // below we've multiple event handlers for handling the multiple event fields.
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value);
+        // setUserInput({
+        //     ...userInput, //here i am using the spread operator to add all the other values in the newstate
+        //     enteredTitle: event.target.value,
+        // })
 
     };
     const amountChangeHandler = (event) => {
         setEnteredAmount(event.target.value);
+        // setUserInput({
+        //     ...userInput, //here i am using the spread operator to add all the other values in the newstate
+        //     enteredAmount: event.target.value,
+        // })
 
     };
     const dateChangeHandler = (event) => {
         setEnteredDate(event.target.value);
-
+        // setUserInput({
+        //     ...userInput, //here i am using the spread operator to add all the other values in the newstate
+        //     enteredDate: event.target.value,
+        // })
+        
     };
+    // console.log([userInput.enteredAmount, userInput.enteredDate, userInput.enteredTitle]);
+    console.log([enteredAmount, enteredDate, enteredTitle]);
     return(
         // This form will get render into the App.js to add new expenses.
         <form>
