@@ -3,45 +3,28 @@ import './ExpenseForm.css'
 // importing the use state from react.
 import { useState } from 'react';
 // This funciton will render the form into the page.
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
+    // above we are using props to send the data from child to parent component.
+
     // Below we are using multiple useState to get the values of the input fields.
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
 
-    // Alternative approach of useState, here we will create the object where we will add all the elements to update their states.
-//    const [userInput, setUserInput] = useState({
-//        enteredTitle: '',
-//        enteredAmount: '',
-//        enteredDate: '',
-//    });
     
     // below we've multiple event handlers for handling the multiple event fields.
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value);
-        // setUserInput({
-        //     ...userInput, //here i am using the spread operator to add all the other values in the newstate
-        //     enteredTitle: event.target.value,
-        // })
 
     };
     const amountChangeHandler = (event) => {
         setEnteredAmount(event.target.value);
-        // setUserInput({
-        //     ...userInput, //here i am using the spread operator to add all the other values in the newstate
-        //     enteredAmount: event.target.value,
-        // })
 
     };
     const dateChangeHandler = (event) => {
         setEnteredDate(event.target.value);
-        // setUserInput({
-        //     ...userInput, //here i am using the spread operator to add all the other values in the newstate
-        //     enteredDate: event.target.value,
-        // })
         
     };
-    // console.log([userInput.enteredAmount, userInput.enteredDate, userInput.enteredTitle]);
     
     // This function will handle the submit event of form.  
     const submitHandler = (event) => {
@@ -52,7 +35,10 @@ const ExpenseForm = () => {
             amount: enteredAmount,
             date: new Date(enteredDate),
         };
-        console.log(enteredData); //testing
+        // here we are sending the data into the parent component by using the function that has been created in the NewExpense file but it has passed as props, when the new expense will get add it will send the above object into the parent component. 
+        props.onSaveExpenseData(enteredData);
+
+        // console.log(enteredData); //testing
 
         // here we are using two way binding for storing the data into the object at the time of form submittion and then below we will reset the form as well.
         setEnteredTitle('');
