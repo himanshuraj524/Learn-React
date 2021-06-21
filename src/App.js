@@ -3,36 +3,45 @@
 import Expenses from './components/Expenses/Expenses';
 // Importing the NewExpense component.
 import NewExpense from './components/NewExpense/NewExpense';
+// importing use state.
+import { useState } from 'react';
+
+// object for sending the values.
+ const DUMMY_EXPENSES= [
+  {
+  title:'Iphone12Mini',
+  amount:'699',
+  date:new Date(2021, 4, 20)
+  },
+  {
+  title:'Iphone12',
+  amount:'799',
+  date:new Date(2021, 4, 22)
+  },
+  {
+  title:'Iphone12Pro',
+  amount:'999',
+  date:new Date(2021, 4, 24)
+  },
+  {
+  title:'Iphone12ProMax',
+  amount:'1599',
+  date:new Date(2021, 4, 26)
+  },
+
+];
+
+
 function App() {
   // now we will use props(properties) to send the data into our components.
-  // object for sending the values.
-  const expenses= [
-    {
-    name:'Iphone12Mini',
-    price:'699',
-    date:new Date(2021, 4, 20)
-    },
-    {
-    name:'Iphone12',
-    price:'799',
-    date:new Date(2021, 4, 22)
-    },
-    {
-    name:'Iphone12Pro',
-    price:'999',
-    date:new Date(2021, 4, 24)
-    },
-    {
-    name:'Iphone12ProMax',
-    price:'1599',
-    date:new Date(2021, 4, 26)
-    },
-
-  ];
   // function below is used to show the data that has been coming from the NewExpense component.
-  const onAddExpense = expense => {
-    console.log('In App.js');
-    console.log(expense);
+  // setting the initial state.
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+
+  const onAddExpense = expenses => {
+    setExpenses((prevExpenses) => {
+      return [expenses, ...prevExpenses]
+    })
   };
   return (
     <div>
