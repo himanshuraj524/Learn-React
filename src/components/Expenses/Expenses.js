@@ -14,14 +14,19 @@ function Expenses(props){
     const filterChangeHandler = selectedYear => {
         setFilteredYear(selectedYear);
     }
-    // console.log(props.item.map((expense) => console.log(expense.name)))
+
+    // here we will create a filteredExpenses array variable which will use the js filter method and return the new array which is filtered with the current selected year.
+    const filteredExpenses = props.item.filter(expense => {
+        return expense.date.getFullYear().toString() === filteredYear;
+    });
+
     // This component will show the expenses into the page.
     return(
         <Card className="expenses">
             {/* below we have used the imported component and its a rule in react the everytime we will write the component first letter in capital */}
             <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
             {/* below we are using map function to send the expenses item dynamically into the ExpenseItem Component */}
-            {props.item.map((expense) => <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date} /> )}
+            {filteredExpenses.map((expense) => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} /> )}
         </Card>
     )
 }

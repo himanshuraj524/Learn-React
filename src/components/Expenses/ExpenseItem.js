@@ -1,7 +1,5 @@
 // below we have imported the css file for stylig the component.
 import '../Expenses/ExpenseItem.css';
-// here we will import the useState library from react to make our page dynamic.
-import { useState } from 'react';
 // here we will import the ExpenseDate item.
 import ExpenseDate from '../Expenses/ExpenseDate';
 // import the card component here

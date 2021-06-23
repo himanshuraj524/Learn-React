@@ -9,21 +9,25 @@ import { useState } from 'react';
 // object for sending the values.
  const DUMMY_EXPENSES= [
   {
+  id:'e1',
   title:'Iphone12Mini',
   amount:'699',
   date:new Date(2021, 4, 20)
   },
   {
+  id:'e2',
   title:'Iphone12',
   amount:'799',
   date:new Date(2021, 4, 22)
   },
   {
+  id:'e3',
   title:'Iphone12Pro',
   amount:'999',
   date:new Date(2021, 4, 24)
   },
   {
+  id:'e4',
   title:'Iphone12ProMax',
   amount:'1599',
   date:new Date(2021, 4, 26)
