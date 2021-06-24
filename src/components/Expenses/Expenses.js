@@ -20,13 +20,30 @@ function Expenses(props){
         return expense.date.getFullYear().toString() === filteredYear;
     });
 
+    // here will preform the third way of conditional statements.
+    let expenseContent = <p>No Expenses Found!</p>;
+    if (filteredExpenses.length > 0) {
+        expenseContent = filteredExpenses.map((expense) => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />)
+    }
+
+
     // This component will show the expenses into the page.
     return(
         <Card className="expenses">
             {/* below we have used the imported component and its a rule in react the everytime we will write the component first letter in capital */}
             <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
             {/* below we are using map function to send the expenses item dynamically into the ExpenseItem Component */}
-            {filteredExpenses.map((expense) => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} /> )}
+            
+            {/* here we will perform the first way of the conditonal statement. */}
+            {/* {filteredExpenses.length === 0 ? <p>No Expenses Found</p> :
+            filteredExpenses.map((expense) => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} /> )} */}
+            
+            {/* here we will perform the second way of the conditonal statement. */}
+            {/* {filteredExpenses.length === 0 && <p>No Expenses Found</p>} 
+            {filteredExpenses.length > 0 && filteredExpenses.map((expense) => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} /> )} */}
+
+            {/* here we will perform the third way of the conditonal statement. */}
+            {expenseContent}
         </Card>
     )
 }
