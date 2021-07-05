@@ -8,7 +8,8 @@ import ExpensesFilter from '../NewExpense/ExpensesFilter';
 import '../Expenses/Expenses.css'
 // import Card component
 import Card from '../UI/Card'
-
+//import ExpensesChart
+import ExpensesChart from './ExpensesChart';
 function Expenses(props) {
     // this function set the default state of the year filter, it send the selectedYear into the setFilteredYear function to change the state of the component and the filteredYear value get sent into the selected attribute to set a default state of the year.
     const [filteredYear, setFilteredYear] = useState('2020');
@@ -38,7 +39,8 @@ function Expenses(props) {
                 {/* here we will perform the second way of the conditonal statement. */}
                 {/* {filteredExpenses.length === 0 && <p>No Expenses Found</p>} 
             {filteredExpenses.length > 0 && filteredExpenses.map((expense) => <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} /> )} */}
-
+                {/* here we are sending the filtered expenses into the ExpensesChart component. */}
+                <ExpensesChart expenses={filteredExpenses} />
                 {/* here we are sending the filteredExpenses into the list component.*/}
                 <ExpensesList item={filteredExpenses} />
 

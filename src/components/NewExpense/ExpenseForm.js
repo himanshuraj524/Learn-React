@@ -32,7 +32,7 @@ const ExpenseForm = (props) => {
         // here we will store the data in an object.
         const enteredData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate),
         };
         // here we are sending the data into the parent component by using the function that has been created in the NewExpense file but it has passed as props, when the new expense will get add it will send the above object into the parent component. 
